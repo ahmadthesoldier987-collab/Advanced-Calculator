@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plotline – calculator and function grapher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">Plotline</a>
+  <nav><a href="#bench">Workbench</a><a href="#features">Features</a><a href="#examples">Examples</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <h1>A calculator that draws what you type.</h1>
+  <p>Evaluate expressions, define your own functions, and plot up to three curves at once. It all runs in your browser.</p>
+  <a class="cta" href="#bench">Open the workbench</a>
+</section>
+
+<section id="bench" class="bench" aria-label="Workbench">
+  <div class="panel calc">
+    <div class="calc-head">
+      <label for="inp">Expression</label>
+      <button id="mode" type="button" title="Switch degrees and radians">RAD</button>
+    </div>
+    <input id="inp" autocomplete="off" spellcheck="false" placeholder="2x(3+4)  or  f(x)=x^2-4">
+    <output id="res">0</output>
+    <div id="pad" class="pad"></div>
+    <h2>History</h2>
+    <ol id="hist"><li class="empty">Results you calculate appear here.</li></ol>
+  </div>
+
+  <div class="panel graph">
+    <div id="fns" class="fns"></div>
+    <canvas id="cv" aria-label="Function graph"></canvas>
+    <div class="graph-foot">
+      <span id="trace">Drag to pan, scroll to zoom.</span>
+      <button id="reset" type="button">Reset view</button>
+    </div>
+    <p id="roots" class="roots"></p>
+  </div>
+</section>
+
+<section id="features" class="features">
+  <h2>What it can do</h2>
+  <dl>
+    <dt>Real expressions</dt><dd>Parentheses, powers, factorials, modulo and implicit multiplication such as 2x or 3(4+1). Use ans to reuse the last result.</dd>
+    <dt>Your own functions</dt><dd>Type f(x)=x^2-4 once. Then use f(3) in the calculator or f(x) in any graph line.</dd>
+    <dt>Live graphs</dt><dd>Drag to pan, scroll to zoom and hover to read values. Points where a curve crosses zero are marked and listed.</dd>
+    <dt>Degrees or radians</dt><dd>One switch changes every trig function, including the inverse ones.</dd>
+  </dl>
+</section>
+
+<section id="examples" class="examples">
+  <h2>Try a curve</h2>
+  <div id="chips" class="chips"></div>
+</section>
+</main>
+
+<footer>Plotline runs entirely in your browser. Nothing you type is sent anywhere.</footer>
+<script src="script.js"></script>
+</body>
+</html>
